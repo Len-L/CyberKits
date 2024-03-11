@@ -1,5 +1,5 @@
 # CyberKits
-Perlengkapan Cyber Dalam Melakukan Pentest Dan Pertahanan
+Perlengkapan Cyber Dalam Melakukan Pentest Dan Pertahanan Server Dari Penyerangan Peretas
 ## Installation
 Instal proyek saya di debian linux
 ```bash
