@@ -7,6 +7,7 @@ Instal proyek saya di debian linux
 ```bash
   apt install nmap 
   apt install figlet
+  apt install jq
   git clone https://github.com/Len-L/CyberKits.git
   cd CyberKits/Pentest-KITS 
   pip install -r requirements.txt
