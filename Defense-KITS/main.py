@@ -23,28 +23,30 @@ while True:
         opsi = input("[Defense-KITS/Setup]_Options-> ")
         if opsi=="1":
             try:
-                subprocess.run(["sudo", "apt", "install", "nmap", "-y"], check=True)
+                qq.run(["sudo", "apt", "install", "nmap", "-y"], check=True)
             except subprocess.CalledProcessError:
                 print(" ")
                 print("===Terjadi Error Saat Menginstal Nmap")
                 exit()
             try:
-                subprocess.run(["sudo", "gem", "install", "wpscan"], check=True)
+                qq.run(["sudo", "apt", "install", "clamav", "-y"], check=True)
             except subprocess.CalledProcessError:
                 print(" ")
-                print("===Terjadi Error Saat Menginstall WPScan")
-                exit()
-            try:
-                subprocess.run(["sudo", "apt", "install", "clamav", "-y"], check=True)
-            except subprocess.CalledProcessError:
                 print("===Terjadi Error Saat Menginstal Clamav")
                 exit() 
 
 
         if opsi=="2":
-            print("fail2ban:")
-            print("snort:")
-            print("Cari honey")
+            print("fail2ban: untuk memblokir alamat IP yang menunjukkan aktivitas mencurigakan, seperti upaya login yang gagal berulang kali.")
+            f2b = input("apakah anda minat menginstallnya?(y/n)-> ")
+            # snort, cari honey
+            if f2b=="y":
+                try:
+                    qq.run(["sudo", "apt", "install", "fail2ban"], check=True)
+                except:
+                    print(" ")
+                    print("===Terjadi Error Saat Menginstall Fail2Ban")
+                    exit()
 
     if opsi=="2":
         print(" ")
@@ -62,17 +64,29 @@ while True:
         print("Hasil sudah di save -> laporan_kerentanan.txt")
 
     if opsi=="3":
-        qq.run(['clamav'])
-
-
-
-
+        print(" ")
+        print("1. Update Database AntiVirus")
+        print("2. Scan Top 3 Folder")
+        clamav = input("[Defense-KITS/AntiVirus]_Options->")
+        if clamav=="1":
+            try:
+                qq.run(["sudo", "freshclam"], check=True)
+                print(" ")
+            except:
+                qq.run(["sudo", "systemctl", "stop", "clamav-freshclam.service"])
+                qq.run(["sudo", "freshclam"])
+                print(" ")
+        
+        if clamav=="2":
+            print("Sedang Scanning Virus............")
+            qq.run(["sudo", "clamscan", "-r", "-v", "--infected", "-l", "log-antivirus/Home-dir_AntiVirus.log", "/home"])
+            qq.run(["sudo", "clamscan", "-r", "-v", "--infected", "-l", "log-antivirus/Var-dir_AntiVirus.log", "/var"])
+            qq.run(["sudo", "clamscan", "-r", "-v", "--infected", "-l", "log-antivirus/Etc-dir_AntiVirus.log", "/etc"])
+            print(" ")
+            print("jangan Khawatir, semua hasil analisa Antivirus sudah di Save -> /log-antivirus")
+            
 
     if opsi=="99":
         print(" ")
         print("Semoga Bermanfaat :)")
         break
-
-
-
-
