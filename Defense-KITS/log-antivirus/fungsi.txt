@@ -1,3 +1,1 @@
-
-folder ini berfungsi untuk menyimpan log dari hasil AntiVirus
-
+Folder Ini Berfungsi Untuk Menyimpan Log Dari Hasil AntiVirus
