@@ -31,17 +31,17 @@ Instal keperluan Defense-KITS di Server Ubuntu
   [Defense-KITS/Setup]_Options-> 1
 ```    
 
-## Features Pentest-KITS
+##Pentest-KITS Features 
 - Vulnerability Scanner 
 - Exploit SSRF Otomatis
 - Bypass 403 (Bypass Forbidden Page)
 - Pencari Parameter
 
-## Features Defense-KITS
+## Defense-KITS Features 
 - Vulnerability Scanner Di Server
 - Anti Virus
 
-## Penggunaan/Contoh Pentest-KITS
+## Penggunaan Pentest-KITS
 ```javascript
 cd CyberKits/Pentest-KITS
 python3 main.py
@@ -56,7 +56,7 @@ python3 main.py
 [Pentest-KITS]_Options->
 ```
 
-## Penggunaan/Contoh Defense-KITS
+## Penggunaan Defense-KITS
 ```javascript
 cd CyberKits/Defense-KITS
 python3 main.py
