@@ -36,6 +36,7 @@ Instal keperluan Defense-KITS di Server Ubuntu
 - Exploit SSRF Otomatis
 - Bypass 403 (Bypass Forbidden Page)
 - Pencari Parameter (Mining URLS)
+- Temporary Email
 
 ## Defense-KITS Features 
 - Vulnerability Scanner Di Server
@@ -52,6 +53,7 @@ python3 main.py
 2. SSRF
 3. Bypass 403
 4. Pencari Parameter
+5. Temporary Email
 99. Exit
 [Pentest-KITS]_Options->
 ```
