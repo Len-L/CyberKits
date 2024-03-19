@@ -31,11 +31,11 @@ Instal keperluan Defense-KITS di Server Ubuntu
   [Defense-KITS/Setup]_Options-> 1
 ```    
 
-##Pentest-KITS Features 
-- Vulnerability Scanner 
+## Pentest-KITS Features 
+- Vulnerability Scanner + Auto Exploit Vulnerability 
 - Exploit SSRF Otomatis
 - Bypass 403 (Bypass Forbidden Page)
-- Pencari Parameter
+- Pencari Parameter (Mining URLS)
 
 ## Defense-KITS Features 
 - Vulnerability Scanner Di Server
