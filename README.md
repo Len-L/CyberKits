@@ -1,12 +1,13 @@
 # CyberKits
 Perlengkapan Cyber Dalam Melakukan Pentest Dan Pertahanan Server Dari Aktivitas Penyerangan Peretas<br>
 <br>
-## Installation Pentest-KITS
+## Installation Pentest-KITS 
 Instal keperluan Pentest-KITS di debian linux
 ```bash
   apt install nmap 
   apt install figlet
   apt install jq
+  apt install mat2 #Linux Only
   git clone https://github.com/Len-L/CyberKits.git
   cd CyberKits/Pentest-KITS 
   pip install -r requirements.txt
@@ -34,8 +35,9 @@ Instal keperluan Defense-KITS di Server Ubuntu
 - Vulnerability Scanner + Auto Exploit Vulnerability 
 - Exploit SSRF Otomatis
 - Bypass 403 (Bypass Forbidden Page)
-- Pencari Parameter (Mining URLS)
-- Temporary Email
+- Pencari Parameter (Mining URLS) 
+- Temporary Email (anonim-kit) 
+- MetaData Cleaner (anonim-kit) [Linux Only]
 
 ## Defense-KITS Features 
 - Vulnerability Scanner Di Server
@@ -52,7 +54,8 @@ python3 main.py
 2. SSRF
 3. Bypass 403
 4. Pencari Parameter
-5. Temporary Email
+5. Temporary Email [anonim-kit]
+6. MetaData Cleaner [anonim-kit]
 99. Exit
 [Pentest-KITS]_Options->
 ```
