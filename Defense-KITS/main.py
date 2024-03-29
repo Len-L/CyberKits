@@ -10,6 +10,7 @@ while True:
     print("1. Setup Defense-KITS ")
     print("2. Scanner Vulnerability Server")
     print("3. Anti Virus (Clamav) ")
+    print("4. Penguatan Server Apache2")
     print("99. Exit")
     print(" ")
     
@@ -36,7 +37,7 @@ while True:
                 exit() 
 
 
-        if opsi=="2":
+        elif opsi=="2":
             print("fail2ban: untuk memblokir alamat IP yang menunjukkan aktivitas mencurigakan, seperti upaya login yang gagal berulang kali.")
             f2b = input("apakah anda minat menginstallnya?(y/n)-> ")
             # snort, cari honey
@@ -48,7 +49,7 @@ while True:
                     print("===Terjadi Error Saat Menginstall Fail2Ban")
                     exit()
 
-    if opsi=="2":
+    elif opsi=="2":
         print(" ")
         def scan_server(report_file):
             scan_results = qq.run(["nmap", "-sC", "-sV", "--script", "vuln", "localhost"], capture_output=True).stdout.decode()
@@ -63,7 +64,7 @@ while True:
             scan_server(report_file)
         print("Hasil sudah di save -> laporan_kerentanan.txt")
 
-    if opsi=="3":
+    elif opsi=="3":
         print(" ")
         print("1. Update Database AntiVirus")
         print("2. Scan Top 3 Folder")
@@ -77,16 +78,50 @@ while True:
                 qq.run(["sudo", "freshclam"])
                 print(" ")
         
-        if clamav=="2":
+
+        elif clamav=="2":
             print("Sedang Scanning Virus............")
             qq.run(["sudo", "clamscan", "-r", "-v", "--infected", "-l", "log-antivirus/Home-dir_AntiVirus.log", "/home"])
             qq.run(["sudo", "clamscan", "-r", "-v", "--infected", "-l", "log-antivirus/Var-dir_AntiVirus.log", "/var"])
             qq.run(["sudo", "clamscan", "-r", "-v", "--infected", "-l", "log-antivirus/Etc-dir_AntiVirus.log", "/etc"])
             print(" ")
             print("jangan Khawatir, semua hasil analisa Antivirus sudah di Save -> /log-antivirus")
+    
+    elif opsi=="4":
+        print(" ")
+        ## Mengubah konfigurasi Apache.
+        qq.run(["sudo", "a2enmod", "headers"], stdout=subprocess.PIPE)
+        qq.run(["sudo", "a2enmod", "ssl"], stdout=subprocess.PIPE)
+        qq.run(["sudo", "a2enmod", "rewrite"], stdout=subprocess.PIPE)
+
+        ## Mengatur konfigurasi keamanan Apache.
+        with open("/etc/apache2/apache2.conf", "a") as f:
+            ## 2 line di bawah ini untuk menghapus spanduk versi server dan OS [mempersulit penyerang dalam proses pengintaian]
+            f.write("ServerSignature Off\n") ##menghapus informasi versi
+            f.write("ServerTokens Prod\n") ##mengubah Header menjadi produksi saja
+            f.write("TraceEnable Off\n") ##Nonaktifkan Permintaan HTTP Jejak
+            f.write("FileETag None\n")
+            f.write("Header edit Set-Cookie ^(.*)$ $1;HttpOnly;Secure\n") ##Setel cookie dengan HttpOnly dan bendera Aman
+            f.write("Header always append X-Frame-Options SAMEORIGIN\n") ##Mencegah Clickjacking attacks
+            f.write("Header set X-XSS-Protection '1; mode=block'\n") ##Perlindungan Terhadap XSS
+            f.write("<Directory /var/www/html>\n")
+            f.write("  Options -Indexes\n") ##Nonaktifkan daftar direktori (pengunjung tidak melihat semua file dan folder yang Anda miliki)
+            f.write("  AllowOverride All\n")
+            f.write("  Require all granted\n")
+            f.write("</Directory>\n")
+
+        # restart Apache.
+        qq.run(["sudo", "systemctl", "restart", "apache2"], stdout=subprocess.PIPE)
+
             
 
     if opsi=="99":
         print(" ")
         print("Semoga Bermanfaat :)")
         break
+
+    else:
+        print(" ")
+        print("Tolong Masukan Opsi Sesuai Angka Yang Ada")
+
+
