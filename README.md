@@ -4,19 +4,19 @@ Perlengkapan Cyber Dalam Melakukan Pentest Dan Pertahanan Server Dari Aktivitas 
 ## Installation Pentest-KITS 
 Instal keperluan Pentest-KITS di debian linux
 ```bash
-  apt install nmap 
-  apt install figlet
-  apt install jq
-  apt install mat2 #Linux Only
-  git clone https://github.com/Len-L/CyberKits.git
-  cd CyberKits/Pentest-KITS 
-  pip install -r requirements.txt
+  #> apt install nmap 
+  #> apt install figlet
+  #> apt install jq
+  #> apt install mat2 #Linux Only
+  #> git clone https://github.com/Len-L/CyberKits.git
+  #> cd CyberKits/Pentest-KITS 
+  #> pip install -r requirements.txt
 ```    
 ## Installation Defense-KITS
 Instal keperluan Defense-KITS di Server Ubuntu
 ```bash
-  cd CyberKits/Defense-KITS
-  python3 main.py
+  #> cd CyberKits/Defense-KITS
+  #> python3 main.py
   
   #Output sebagai berikut======
   
@@ -47,8 +47,8 @@ Instal keperluan Defense-KITS di Server Ubuntu
 
 ## Penggunaan Pentest-KITS
 ```javascript
-cd CyberKits/Pentest-KITS
-python3 main.py
+#> cd CyberKits/Pentest-KITS
+#> python3 main.py
 
 #Output akan seperti ini======
 
@@ -64,8 +64,8 @@ python3 main.py
 
 ## Penggunaan Defense-KITS
 ```javascript
-cd CyberKits/Defense-KITS
-python3 main.py
+#> cd CyberKits/Defense-KITS
+#> python3 main.py
 
 #Output akan seperti ini======
 
