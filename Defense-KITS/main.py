@@ -90,9 +90,9 @@ while True:
     elif opsi=="4":
         print(" ")
         ## Mengubah konfigurasi Apache.
-        qq.run(["sudo", "a2enmod", "headers"], stdout=subprocess.PIPE)
-        qq.run(["sudo", "a2enmod", "ssl"], stdout=subprocess.PIPE)
-        qq.run(["sudo", "a2enmod", "rewrite"], stdout=subprocess.PIPE)
+        qq.run(["sudo", "a2enmod", "headers"], stdout=qq.PIPE)
+        qq.run(["sudo", "a2enmod", "ssl"], stdout=qq.PIPE)
+        qq.run(["sudo", "a2enmod", "rewrite"], stdout=qq.PIPE)
 
         ## Mengatur konfigurasi keamanan Apache.
         with open("/etc/apache2/apache2.conf", "a") as f:
@@ -111,11 +111,11 @@ while True:
             f.write("</Directory>\n")
 
         # restart Apache.
-        qq.run(["sudo", "systemctl", "restart", "apache2"], stdout=subprocess.PIPE)
+        qq.run(["sudo", "systemctl", "restart", "apache2"], stdout=qq.PIPE)
 
             
 
-    if opsi=="99":
+    elif opsi=="99":
         print(" ")
         print("Semoga Bermanfaat :)")
         break
@@ -123,5 +123,8 @@ while True:
     else:
         print(" ")
         print("Tolong Masukan Opsi Sesuai Angka Yang Ada")
+
+
+
 
 
