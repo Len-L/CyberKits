@@ -22,7 +22,8 @@ Instal keperluan Defense-KITS di Server Ubuntu
   
   1. Setup Defense-KITS 
   2. Scanner Vulnerability Server
-  3. Anti Virus (Clamav) 
+  3. Anti Virus (Clamav)
+  4. Penguatan Server Apache2
   99. Exit
   [Defense-KITS]_Options-> 1
  
@@ -42,6 +43,7 @@ Instal keperluan Defense-KITS di Server Ubuntu
 ## Defense-KITS Features 
 - Vulnerability Scanner Di Server
 - Anti Virus
+- Hardening Server Apache2
 
 ## Penggunaan Pentest-KITS
 ```javascript
@@ -69,7 +71,8 @@ python3 main.py
 
 1. Setup Defense-KITS 
 2. Scanner Vulnerability Server
-3. Anti Virus (Clamav) 
+3. Anti Virus (Clamav)
+4. Penguatan Server Apache2
 99. Exit
  
 [Defense-KITS]_Options-> 
