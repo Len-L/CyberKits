@@ -34,7 +34,7 @@ Instal keperluan Defense-KITS di Server Ubuntu
 
 ## Pentest-KITS Features 
 - Vulnerability Scanner + Auto Exploit Vulnerability 
-- Exploit SSRF Otomatis
+- Exploit SSRF Otomatis [Support SSL]
 - Bypass 403 (Bypass Forbidden Page)
 - Pencari Parameter (Mining URLS) 
 - Temporary Email (anonim-kit) 
