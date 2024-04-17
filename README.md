@@ -14,22 +14,17 @@ Instal keperluan Pentest-KITS di debian linux
 ```    
 ## Installation Defense-KITS
 Instal keperluan Defense-KITS di Server Ubuntu
-```bash
+```javascript
   #> cd CyberKits/Defense-KITS
-  #> python3 main.py
+  #> python3 setup.py
   
   #Output sebagai berikut======
-  
-  1. Setup Defense-KITS 
-  2. Scanner Vulnerability Server
-  3. Anti Virus (Clamav)
-  4. Penguatan Server Apache2
-  99. Exit
-  [Defense-KITS]_Options-> 1
+
+1. Setup Defense-KITS 
+2. Penguatan Server Apache2
+99. Exit
  
-  1. install Kebutuhan Tools
-  2. Perkuat Server Dengan Tools Rekomendasi Kami
-  [Defense-KITS/Setup]_Options-> 1
+[Defense-KITS/Setup]_Options-> 1
 ```    
 
 ## Pentest-KITS Features 
@@ -44,6 +39,7 @@ Instal keperluan Defense-KITS di Server Ubuntu
 - Vulnerability Scanner Di Server
 - Anti Virus
 - Hardening Server Apache2
+- Auto Ban IP (jika Percobaan terus menerus gagal)
 
 ## Penggunaan Pentest-KITS
 ```javascript
@@ -65,17 +61,18 @@ Instal keperluan Defense-KITS di Server Ubuntu
 ## Penggunaan Defense-KITS
 ```javascript
 #> cd CyberKits/Defense-KITS
-#> python3 main.py
+#> python3 admin_control.py
 
 #Output akan seperti ini======
 
-1. Setup Defense-KITS 
+1. Start Semua Service
 2. Scanner Vulnerability Server
 3. Anti Virus (Clamav)
-4. Penguatan Server Apache2
+4. [Fail2Ban] Cek Log
+5. [Fail2ban] Unban IP
 99. Exit
  
-[Defense-KITS]_Options-> 
+[Defense-KITS/Admin-Control]_Options-> 
 
 ```
 
