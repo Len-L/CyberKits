@@ -9,6 +9,7 @@ while True:
     print(" ")
     print("1. Setup Defense-KITS ")
     print("2. Penguatan Server Apache2")
+    print("3. Anti DDOS")
     print("99. Exit")
     print(" ")
     
@@ -23,33 +24,45 @@ while True:
         if opsi=="1":
             try:
                 qq.run(["sudo", "apt", "install", "nmap", "-y"], check=True)
-            except subprocess.CalledProcessError:
+            except:
                 print(" ")
                 print("===Terjadi Error Saat Menginstal Nmap")
                 exit()
-            try:
-                qq.run(["sudo", "apt", "install", "clamav", "-y"], check=True)
-            except subprocess.CalledProcessError:
-                print(" ")
-                print("===Terjadi Error Saat Menginstal Clamav")
-                exit() 
 
 
         elif opsi=="2":
-            print("fail2ban: untuk memblokir alamat IP yang menunjukkan aktivitas mencurigakan, seperti upaya login yang gagal berulang kali.")
-            f2b = input("apakah anda minat menginstallnya?(y/n)-> ")
-            # snort, cari honey
-            if f2b=="y":
-                try:
-                    qq.run(["sudo", "apt", "install", "fail2ban", "-y"], check=True)
-                    qq.run(["sudo", "service", "fail2ban", "start"])
-                    print(" ")
-                    print("Setup Fail2ban Selesai, Happy Enjoy :) ")
-                except:
-                    print(" ")
-                    print("===Terjadi Error Saat Menginstall Fail2Ban")
-                    exit()
+            print("1. Fail2Ban")
+            print("2. Clamav")
 
+            kuat = input("options-> ")
+
+            if kuat=="1":
+                print("fail2ban: untuk memblokir alamat IP yang menunjukkan aktivitas mencurigakan, seperti upaya login yang gagal berulang kali.")
+                f2b = input("apakah anda minat menginstallnya?(y/n)-> ")
+                # snort, cari honey
+                if f2b=="y":
+                    try:
+                        qq.run(["sudo", "apt", "install", "fail2ban", "-y"], check=True)
+                        qq.run(["sudo", "service", "fail2ban", "start"])
+                        print(" ")
+                        print("Setup Fail2ban Selesai, Happy Enjoy :) ")
+                    except:
+                        print(" ")
+                        print("===Terjadi Error Saat Menginstall Fail2Ban")
+                        exit()
+
+            elif kuat=="2":
+                print("Clamav: suatu alat untuk membantu mendeteksi virus")
+                clamav = input("apakah anda minat menginstallnya?(y/n)-> ")
+                if clamav=="y":
+                    try:
+                        qq.run(["sudo", "apt", "install", "clamav", "-y"], check=True)
+                        print(" ")
+                        print("Setup Clamav Selesai, Happy Enjoy :) ")
+                    except:
+                        print(" ")
+                        print("===Terjadi Error Saat Menginstall Clamav")
+                        exit()
  
     elif opsi=="2":
         print(" ")
@@ -78,6 +91,20 @@ while True:
         qq.run(["sudo", "systemctl", "restart", "apache2"], stdout=qq.PIPE)
         print(" ")
         print("Hardening Server Apache Telah Berhasil Dengan Baik ")
+    
+    elif opsi=="3":
+        os.system("iptables -t mangle -A PREROUTING -m conntrack --ctstate INVALID -j DROP") #block invalid packet
+        os.system("iptables -t mangle -A PREROUTING -p tcp ! --syn -m conntrack --ctstate NEW -j DROP") #Block New Packet Yang Not SYN
+        os.system("iptables -t mangle -A PREROUTING -p tcp -m conntrack --ctstate NEW -m tcpmss ! --mss 536:65535 -j DROP") #Block Nilai MSS Yang Tidak Normal
+        #Block Packet Dengan Bogus TCP Flag
+        os.system("iptables -t mangle -A PREROUTING -p tcp --tcp-flags FIN,SYN FIN,SYN -j DROP")
+        os.system("iptables -t mangle -A PREROUTING -p tcp --tcp-flags SYN,RST SYN,RST -j DROP")
+        os.system("iptables -t mangle -A PREROUTING -p tcp --tcp-flags FIN,RST FIN,RST -j DROP")
+        os.system("iptables -t mangle -A PREROUTING -p tcp --tcp-flags FIN,ACK FIN -j DROP")
+        os.system("iptables -t mangle -A PREROUTING -p tcp --tcp-flags ACK,URG URG -j DROP")
+        os.system("iptables -t mangle -A PREROUTING -p tcp --tcp-flags ACK,PSH PSH -j DROP")
+        os.system("iptables -t mangle -A PREROUTING -p tcp --tcp-flags ALL NONE -j DROP")
+
 
             
 
@@ -89,8 +116,5 @@ while True:
     else:
         print(" ")
         print("Tolong Masukan Opsi Sesuai Angka Yang Ada")
-
-
-
 
 
