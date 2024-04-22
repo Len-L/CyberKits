@@ -22,6 +22,7 @@ Instal keperluan Defense-KITS di Server Ubuntu
 
 1. Setup Defense-KITS 
 2. Penguatan Server Apache2
+3. Anti DDOS
 99. Exit
  
 [Defense-KITS/Setup]_Options-> 1
@@ -40,6 +41,7 @@ Instal keperluan Defense-KITS di Server Ubuntu
 - Anti Virus
 - Hardening Server Apache2
 - Auto Ban IP (jika Percobaan terus menerus gagal)
+- Anti DDOS
 
 ## Penggunaan Pentest-KITS
 ```javascript
