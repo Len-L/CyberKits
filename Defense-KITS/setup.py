@@ -3,24 +3,39 @@ import subprocess as qq
 import os
 import datetime
 
+banner = f"""
+    \033[32m  
+
+        ╭━━━╮╱╱╱╭━╮╱╱╱╱╱╱╱╱╱╱╱╱╭╮╭━┳━━┳━━━━┳━━━╮
+        ╰╮╭╮┃╱╱╱┃╭╯╱╱╱╱╱╱╱╱╱╱╱╱┃┃┃╭┻┫┣┫╭╮╭╮┃╭━╮┃
+        ╱┃┃┃┣━━┳╯╰┳━━┳━╮╭━━┳━━╮┃╰╯╯╱┃┃╰╯┃┃╰┫╰━━╮
+        ╱┃┃┃┃┃━╋╮╭┫┃━┫╭╮┫━━┫┃━┫┃╭╮┃╱┃┃╱╱┃┃╱╰━━╮┃
+        ╭╯╰╯┃┃━┫┃┃┃┃━┫┃┃┣━━┃┃━┫┃┃┃╰┳┫┣╮╱┃┃╱┃╰━╯┃
+        ╰━━━┻━━╯╰╯╰━━┻╯╰┻━━┻━━╯╰╯╰━┻━━╯╱╰╯╱╰━━━╯ 
+
+"""
+
 
 
 while True:
-    print(" ")
+    print(banner)
+    print("\033[32m")
     print("1. Setup Defense-KITS ")
     print("2. Penguatan Server Apache2")
     print("3. Anti DDOS")
     print("99. Exit")
     print(" ")
     
-    opsi = input("[Defense-KITS/Setup]_Options-> ")
+    opsi = input("\33[94m[Defense-KITS/Setup]_Options-> ")
+    print("\033[32m")
 
     if opsi=="1":
         print(" ")
         print("1. install Kebutuhan Defense-Kits [Wajib] ")
         print("2. Perkuat Server Dengan Tools Rekomendasi Kami")
         print(" ")
-        opsi = input("[Defense-KITS/Setup]_Options-> ")
+        opsi = input("\33[94m[Defense-KITS/Setup]_Options-> ")
+        print("\033[32m")
         if opsi=="1":
             try:
                 qq.run(["sudo", "apt", "install", "nmap", "-y"], check=True)
@@ -34,11 +49,13 @@ while True:
             print("1. Fail2Ban")
             print("2. Clamav")
 
-            kuat = input("options-> ")
+            kuat = input("\33[94m[Defense-KITS/Setup]_Options-> ")
+            print("\033[32m")
 
             if kuat=="1":
                 print("fail2ban: untuk memblokir alamat IP yang menunjukkan aktivitas mencurigakan, seperti upaya login yang gagal berulang kali.")
-                f2b = input("apakah anda minat menginstallnya?(y/n)-> ")
+                f2b = input("\33[94mapakah anda minat menginstallnya?(y/n)-> ")
+                print("\033[32m")
                 # snort, cari honey
                 if f2b=="y":
                     try:
@@ -53,7 +70,8 @@ while True:
 
             elif kuat=="2":
                 print("Clamav: suatu alat untuk membantu mendeteksi virus")
-                clamav = input("apakah anda minat menginstallnya?(y/n)-> ")
+                clamav = input("\33[94mapakah anda minat menginstallnya?(y/n)-> ")
+                print("\033[32m")
                 if clamav=="y":
                     try:
                         qq.run(["sudo", "apt", "install", "clamav", "-y"], check=True)
@@ -116,5 +134,6 @@ while True:
     else:
         print(" ")
         print("Tolong Masukan Opsi Sesuai Angka Yang Ada")
+
 
 
