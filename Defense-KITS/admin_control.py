@@ -2,10 +2,22 @@ import subprocess as qq
 import os
 import datetime
 
+banner = f"""
+    \033[32m  
+
+        ╭━━━╮╱╱╱╭━╮╱╱╱╱╱╱╱╱╱╱╱╱╭╮╭━┳━━┳━━━━┳━━━╮
+        ╰╮╭╮┃╱╱╱┃╭╯╱╱╱╱╱╱╱╱╱╱╱╱┃┃┃╭┻┫┣┫╭╮╭╮┃╭━╮┃
+        ╱┃┃┃┣━━┳╯╰┳━━┳━╮╭━━┳━━╮┃╰╯╯╱┃┃╰╯┃┃╰┫╰━━╮
+        ╱┃┃┃┃┃━╋╮╭┫┃━┫╭╮┫━━┫┃━┫┃╭╮┃╱┃┃╱╱┃┃╱╰━━╮┃
+        ╭╯╰╯┃┃━┫┃┃┃┃━┫┃┃┣━━┃┃━┫┃┃┃╰┳┫┣╮╱┃┃╱┃╰━╯┃
+        ╰━━━┻━━╯╰╯╰━━┻╯╰┻━━┻━━╯╰╯╰━┻━━╯╱╰╯╱╰━━━╯ 
+
+"""
 
 
 while True:
-    print(" ")
+    print(banner)
+    print("\033[32m")
     print("1. Start Semua Service")
     print("2. Scanner Vulnerability Server")
     print("3. Anti Virus (Clamav)")
@@ -14,8 +26,8 @@ while True:
     print("99. Exit")
     print(" ")
     
-    opsi = input("[Defense-KITS/Admin-Control]_Options-> ")
-    print(" ")
+    opsi = input("\33[94m[Defense-KITS/Admin-Control]_Options-> ")
+    print("\033[32m")
 
     if opsi=="1":
         try:
@@ -42,7 +54,8 @@ while True:
         print(" ")
         print("1. Update Database AntiVirus")
         print("2. Scan Top 3 Folder")
-        clamav = input("[Defense-KITS/AntiVirus]_Options->")
+        clamav = input("\33[94m[Defense-KITS/AntiVirus]_Options->")
+        print("\033[32m")
         if clamav=="1":
             try:
                 qq.run(["sudo", "freshclam"], check=True)
@@ -71,8 +84,9 @@ while True:
     elif opsi=="5":
         print("")
         print("contoh: sshd")
-        service = input("Masukan Service-> ")
+        service = input("\33[94mMasukan Service-> ")
         ipnakal = input("Masukan IP Yang Mau Di Unban-> ")
+        print("\033[32m")
         qq.run(["sudo", "fail2ban-client", "set", service, "unbanip", ipnakal])
         print(" ")
 
@@ -84,6 +98,9 @@ while True:
     else:
         print(" ")
         print("Tolong Masukan Opsi Sesuai Angka Yang Ada")
+
+
+
 
 
 
