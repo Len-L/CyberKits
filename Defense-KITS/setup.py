@@ -1,7 +1,9 @@
 
+
 import subprocess as qq
 import os
-import datetime
+import re
+import sys 
 
 banner = f"""
     \033[32m  
@@ -23,6 +25,7 @@ while True:
     print("1. Setup Defense-KITS ")
     print("2. Penguatan Server Apache2")
     print("3. Anti DDOS")
+    print("4. [RUN] Honeypot")
     print("99. Exit")
     print(" ")
     
@@ -122,6 +125,48 @@ while True:
         os.system("iptables -t mangle -A PREROUTING -p tcp --tcp-flags ACK,URG URG -j DROP")
         os.system("iptables -t mangle -A PREROUTING -p tcp --tcp-flags ACK,PSH PSH -j DROP")
         os.system("iptables -t mangle -A PREROUTING -p tcp --tcp-flags ALL NONE -j DROP")
+    
+    elif opsi=="4":
+        service_yang_ada = {  # sevice yang ada aja (kumpulannyaaaaaa.........)
+        "ftp",
+        "ssh",
+        "http",
+        "mysql",
+        }
+
+        def add_service(service_name):
+            global command_string
+            if service_name in service_yang_ada:  
+                command_string += f"{service_name},"  
+                print(f"Layanan '{service_name}' ditambahkan.")
+            else:
+                print(f"Layanan '{service_name}' tidak tersedia.")
+
+        def get_user_input(service_name):
+            while True:
+                user_input = input(f"\33[94mApakah Anda ingin menambahkan '{service_name}'? (ya/tidak): \033[32m").lower()
+                if user_input in ("ya", "tidak"):
+                    return user_input == "ya"
+                else:
+                    print("Masukan tidak valid. Silahkan masukkan 'ya' atau 'tidak'.")
+
+        command_string = "sudo -E python3 -m honeypots --setup "
+
+        for service_name in service_yang_ada:  
+            if get_user_input(service_name):
+                add_service(service_name)
+
+
+        def merge_strings(command_string, config_file):
+            merged_string = f"{command_string} --config {config_file}"
+            return merged_string
+
+        config_file = "config.json"
+        merged_command = merge_strings(command_string, config_file)
+        #print(f"Perintah lengkap: {merged_command}")
+        qq.run(merged_command, shell=True)
+
+        
 
 
             
@@ -134,6 +179,8 @@ while True:
     else:
         print(" ")
         print("Tolong Masukan Opsi Sesuai Angka Yang Ada")
+
+
 
 
 
