@@ -20,9 +20,17 @@ Instal keperluan Defense-KITS di Server Ubuntu
   
   #Output sebagai berikut======
 
+        ╭━━━╮╱╱╱╭━╮╱╱╱╱╱╱╱╱╱╱╱╱╭╮╭━┳━━┳━━━━┳━━━╮
+        ╰╮╭╮┃╱╱╱┃╭╯╱╱╱╱╱╱╱╱╱╱╱╱┃┃┃╭┻┫┣┫╭╮╭╮┃╭━╮┃
+        ╱┃┃┃┣━━┳╯╰┳━━┳━╮╭━━┳━━╮┃╰╯╯╱┃┃╰╯┃┃╰┫╰━━╮
+        ╱┃┃┃┃┃━╋╮╭┫┃━┫╭╮┫━━┫┃━┫┃╭╮┃╱┃┃╱╱┃┃╱╰━━╮┃
+        ╭╯╰╯┃┃━┫┃┃┃┃━┫┃┃┣━━┃┃━┫┃┃┃╰┳┫┣╮╱┃┃╱┃╰━╯┃
+        ╰━━━┻━━╯╰╯╰━━┻╯╰┻━━┻━━╯╰╯╰━┻━━╯╱╰╯╱╰━━━╯
+
 1. Setup Defense-KITS 
 2. Penguatan Server Apache2
 3. Anti DDOS
+4. [RUN] Honeypot
 99. Exit
  
 [Defense-KITS/Setup]_Options-> 1
@@ -37,6 +45,7 @@ Instal keperluan Defense-KITS di Server Ubuntu
 - MetaData Cleaner (anonim-kit) [Linux Only]
 
 ## Defense-KITS Features 
+- Honeypot 
 - Vulnerability Scanner Di Server
 - Anti Virus
 - Hardening Server Apache2
@@ -72,6 +81,13 @@ Instal keperluan Defense-KITS di Server Ubuntu
 #> python3 admin_control.py
 
 #Output akan seperti ini======
+
+        ╭━━━╮╱╱╱╭━╮╱╱╱╱╱╱╱╱╱╱╱╱╭╮╭━┳━━┳━━━━┳━━━╮
+        ╰╮╭╮┃╱╱╱┃╭╯╱╱╱╱╱╱╱╱╱╱╱╱┃┃┃╭┻┫┣┫╭╮╭╮┃╭━╮┃
+        ╱┃┃┃┣━━┳╯╰┳━━┳━╮╭━━┳━━╮┃╰╯╯╱┃┃╰╯┃┃╰┫╰━━╮
+        ╱┃┃┃┃┃━╋╮╭┫┃━┫╭╮┫━━┫┃━┫┃╭╮┃╱┃┃╱╱┃┃╱╰━━╮┃
+        ╭╯╰╯┃┃━┫┃┃┃┃━┫┃┃┣━━┃┃━┫┃┃┃╰┳┫┣╮╱┃┃╱┃╰━╯┃
+        ╰━━━┻━━╯╰╯╰━━┻╯╰┻━━┻━━╯╰╯╰━┻━━╯╱╰╯╱╰━━━╯
 
 1. Start Semua Service
 2. Scanner Vulnerability Server
