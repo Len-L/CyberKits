@@ -1,0 +1,55 @@
+{
+  "logs": "file,terminal,json",
+  "logs_location": "/var/log/honeypots/",
+  "syslog_address": "",
+  "syslog_facility": 0,
+  "postgres": "",
+  "sqlite_file": "",
+  "db_options": [],
+  "sniffer_filter": "",
+  "sniffer_interface": "",
+  "honeypots": {
+    "ssh": {
+      "port": 22,
+      "ip": "0.0.0.0",
+      "username": "root",
+      "password": "root",
+      "log_file_name": "ssh.log",
+      "max_bytes": 10000,
+      "backup_count": 10,
+      "options": ["capture_commands"]
+    },
+    "ftp": {
+      "port": 21,
+      "ip": "0.0.0.0",
+      "username": "anonymous",
+      "password": "anonymous",
+      "log_file_name": "ftp.log",
+      "max_bytes": 10000,
+      "backup_count": 10,
+      "options": ["capture_commands"]
+    },
+    "mysql": {
+      "port": 3306,
+      "ip": "0.0.0.0",
+      "username": "root",
+      "password": "password",
+      "database": "honeypot",
+      "log_file_name": "mysql.log",
+      "max_bytes": 10000,
+      "backup_count": 10,
+      "options": ["capture_commands"]
+    },
+    "http": {
+      "port": 80,
+      "ip": "0.0.0.0",
+      "log_file_name": "http.log",
+      "max_bytes": 10000,
+      "backup_count": 10,
+      "options": ["capture_commands"]
+    }
+
+
+  }
+}
+
