@@ -48,8 +48,9 @@ while True:
 
 
         elif opsi=="2":
-            print("1. Fail2Ban")
-            print("2. Clamav")
+            print("1. Fail2Ban  (root)")
+            print("2. Clamav  (root)")
+            print("3. Honeypot  (normal user)")
 
             kuat = input("\33[94m[Defense-KITS/Setup]_Options-> ")
             print("\033[32m")
@@ -83,6 +84,16 @@ while True:
                         print(" ")
                         print("===Terjadi Error Saat Menginstall Clamav")
                         exit()
+            
+            elif kuat=="3":
+                print("Honeypot")
+                honeypot = input("\33[94mapakah anda minat menginstallnya?(y/n)-> ")
+                print("\033[32m")
+                if honeypot=="y":
+                    try:
+                        qq.run(["pip3", "install", "honeypots"], check=True)
+
+
  
     elif opsi=="2":
         print(" ")
@@ -178,8 +189,6 @@ while True:
     else:
         print(" ")
         print("Tolong Masukan Opsi Sesuai Angka Yang Ada")
-
-
 
 
 
