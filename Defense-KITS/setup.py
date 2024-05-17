@@ -92,6 +92,10 @@ while True:
                 if honeypot=="y":
                     try:
                         qq.run(["pip3", "install", "honeypots"], check=True)
+                    except:
+                        print(" ")
+                        print("===Terjadi Error Saat Menginstall Honeypots")
+                        exit()
 
 
  
@@ -189,6 +193,7 @@ while True:
     else:
         print(" ")
         print("Tolong Masukan Opsi Sesuai Angka Yang Ada")
+
 
 
 
