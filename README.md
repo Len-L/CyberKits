@@ -57,6 +57,7 @@ Instal keperluan Defense-KITS di Server Ubuntu
 - Pencari Parameter (Mining URLS) 
 - Temporary Email (anonim-kit) 
 - MetaData Cleaner (anonim-kit) [Linux Only]
+- Subdomain Scanner
 
 ## Defense-KITS Features 
 - Honeypot 
@@ -85,6 +86,7 @@ Instal keperluan Defense-KITS di Server Ubuntu
 4. Pencari Parameter
 5. Temporary Email [anonim-kit]
 6. MetaData Cleaner [anonim-kit]
+7. Subdomain Scanner
 99. Exit
 [Pentest-KITS]_Options->
 ```
