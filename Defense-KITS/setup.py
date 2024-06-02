@@ -34,7 +34,7 @@ while True:
     if opsi=="1":
         print(" ")
         print("1. install Kebutuhan Defense-Kits [Wajib] ")
-        print("2. Perkuat Server Dengan Tools Rekomendasi Kami")
+        print("2. Perkuat Server Dengan Tools Rekomendasi dari CyberKITS")
         print(" ")
         opsi = input("\33[94m[Defense-KITS/Setup]_Options-> ")
         print("\033[32m")
@@ -51,6 +51,7 @@ while True:
             print("1. Fail2Ban  (root)")
             print("2. Clamav  (root)")
             print("3. Honeypot  (normal user)")
+            print("4. modsecurity (root)")
 
             kuat = input("\33[94m[Defense-KITS/Setup]_Options-> ")
             print("\033[32m")
@@ -95,6 +96,58 @@ while True:
                     except:
                         print(" ")
                         print("===Terjadi Error Saat Menginstall Honeypots")
+                        exit()
+            
+            elif kuat=="4":
+                print("ModSecurity: WAF Tingkat Aplikasi")
+                print("Saran: Lihat Video Demo Agar Aman")
+                modsec = input("\33[94mapakah anda minat menginstallnya dan auto setup?(y/n)-> ")
+                print("\033[32m")
+                if modsec=="y":
+                    try:
+                        config_dir = "modsecurity-assets"
+
+                        # Perbarui daftar paket dan instal dependensi
+                        qq.run(["sudo", "apt-add-repository", "ppa:ondrej/php", "-y"])
+                        qq.run(["sudo", "add-apt-repository", "ppa:ondrej/apache2", "-y"])
+                        qq.run(["sudo", "apt", "update"])
+                        qq.run(["sudo", "apt", "-y", "install", "gnupg2", "software-properties-common", "curl", "wget", "git", "unzip"])
+
+                        # Instal Apache2, PHP, dan MariaDB
+                        qq.run(["sudo", "apt", "-y", "install", "apache2", "php", "php-xmlrpc", "php-mysql", "php-gd", "php-cli", "php-curl", "php-mysql", "php-mbstring", "php-xdebug", "libapache2-mod-php"])
+                        qq.run(["sudo", "apt", "-y", "install", "mariadb-server", "mariadb-client"])
+
+                        # Instal ModSecurity dan ModSecurity CRS
+                        qq.run(["sudo", "apt", "-y", "install", "libapache2-mod-security2", "modsecurity-crs"])
+
+                        # Aktifkan ModSecurity
+                        qq.run(["a2enmod", "security2"])
+
+                        # Restart Apache2
+                        qq.run(["systemctl", "restart", "apache2"])
+
+                        if os.path.isfile(os.path.join(config_dir, "modsecurity.conf")):
+                            qq.run(["cp", os.path.join(config_dir, "modsecurity.conf"), "/etc/modsecurity/modsecurity.conf"])
+                        else:
+                            print("File konfigurasi ModSecurity tidak ditemukan di", config_dir)
+
+                        # Unduh dan ekstrak ModSecurity CRS rules :)
+                        qq.run(["wget", "https://github.com/coreruleset/coreruleset/archive/refs/tags/v4.3.0.zip"])
+                        qq.run(["unzip", "v4.3.0.zip"])
+                        qq.run(["mkdir", "/etc/apache2/modsecurity-crs/"])
+                        qq.run(["mv", "coreruleset-4.3.0/", "/etc/apache2/modsecurity-crs"])
+                        qq.run(["mv", "/etc/apache2/modsecurity-crs/coreruleset-4.3.0/crs-setup.conf.example", "/etc/apache2/modsecurity-crs/coreruleset-4.3.0/crs-setup.conf"])
+
+                        if os.path.isfile(os.path.join(config_dir, "security2.conf")):
+                            qq.run(["cp", os.path.join(config_dir, "security2.conf"), "/etc/apache2/mods-enabled/security2.conf"])
+                        else:
+                            print("File konfigurasi security2.conf tidak ditemukan di", config_dir)
+
+                        # Restart Apache2 
+                        qq.run(["systemctl", "restart", "apache2"])
+                    except:
+                        print(" ")
+                        print("===Terjadi Error Saat settings ModSecurity")
                         exit()
 
 
