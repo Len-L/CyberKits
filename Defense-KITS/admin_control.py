@@ -23,6 +23,7 @@ while True:
     print("3. Anti Virus (Clamav)")
     print("4. [Fail2Ban] Cek Log")
     print("5. [Fail2ban] Unban IP")
+    print("6. [ModSec] Cek Log")
     print("99. Exit")
     print(" ")
     
@@ -89,6 +90,12 @@ while True:
         print("\033[32m")
         qq.run(["sudo", "fail2ban-client", "set", service, "unbanip", ipnakal])
         print(" ")
+    
+    elif opsi=="6":
+        print(" ")
+        qq.run(["less", "/var/log/apache2/modsec_audit.log"])
+        print(" ")
+
 
     elif opsi=="99":
         print(" ")
@@ -98,10 +105,5 @@ while True:
     else:
         print(" ")
         print("Tolong Masukan Opsi Sesuai Angka Yang Ada")
-
-
-
-
-
 
 
