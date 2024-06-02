@@ -62,6 +62,7 @@ Instal keperluan Defense-KITS di Server Ubuntu
 ## Defense-KITS Features 
 - Honeypot 
 - Vulnerability Scanner Di Server
+- WAF Level Aplikasi (ModSecurity)
 - Anti Virus
 - Hardening Server Apache2
 - Auto Ban IP (jika Percobaan terus menerus gagal)
