@@ -82,7 +82,7 @@ Instal keperluan Defense-KITS di Server Ubuntu
         ┃┃╱╱┃┃━┫┃┃┃╰┫┃━╋━━┃╰╮┃┃┃╰┳┫┣╮╱┃┃╱┃╰━╯┃
         ╰╯╱╱╰━━┻╯╰┻━┻━━┻━━┻━╯╰╯╰━┻━━╯╱╰╯╱╰━━━╯
 1. Scanning
-2. SSRF
+2. Exploit SSRF
 3. Bypass 403
 4. Pencari Parameter
 5. Temporary Email [anonim-kit]
@@ -111,6 +111,7 @@ Instal keperluan Defense-KITS di Server Ubuntu
 3. Anti Virus (Clamav)
 4. [Fail2Ban] Cek Log
 5. [Fail2ban] Unban IP
+6. [ModSec] Cek Log
 99. Exit
  
 [Defense-KITS/Admin-Control]_Options-> 
