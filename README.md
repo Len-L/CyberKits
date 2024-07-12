@@ -68,6 +68,9 @@ Instal keperluan Defense-KITS di Server Ubuntu
 - Auto Ban IP (jika Percobaan terus menerus gagal)
 - Anti DDOS
 
+## Misc
+- Auto Login
+
 ## Penggunaan Pentest-KITS
 ```javascript
 #> cd CyberKits/Pentest-KITS
