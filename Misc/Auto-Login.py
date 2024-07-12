@@ -1,8 +1,24 @@
 
-# Sebelum menggunakan sebaiknya melihat video tutorial di bagian Demo[LINK-YOUTUBE-VIDEO]
+# Sebelum menggunakan sebaiknya melihat video tutorial di bagian Demo [LINK-YOUTUBE-VIDEO]
 
 import sys
 
+banner = f"""
+    \033[32m  
+
+        ╭━━━╮╱╱╱╭╮╱╱╱╱╱╱╭╮╭━┳━━┳━━━━┳━━━╮
+        ┃╭━╮┃╱╱╱┃┃╱╱╱╱╱╱┃┃┃╭┻┫┣┫╭╮╭╮┃╭━╮┃
+        ┃┃╱╰╋╮╱╭┫╰━┳━━┳━┫╰╯╯╱┃┃╰╯┃┃╰┫╰━━╮
+        ┃┃╱╭┫┃╱┃┃╭╮┃┃━┫╭┫╭╮┃╱┃┃╱╱┃┃╱╰━━╮┃
+        ┃╰━╯┃╰━╯┃╰╯┃┃━┫┃┃┃┃╰┳┫┣╮╱┃┃╱┃╰━╯┃
+        ╰━━━┻━╮╭┻━━┻━━┻╯╰╯╰━┻━━╯╱╰╯╱╰━━━╯
+        ╱╱╱╱╭━╯┃
+        ╱╱╱╱╰━━╯
+
+"""
+
+print(banner)
+print("\033[32m")
 try:
     from selenium import webdriver
     from selenium.webdriver.common.by import By
