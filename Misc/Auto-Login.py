@@ -24,7 +24,7 @@ try:
     from selenium.webdriver.common.by import By
     print("Library Selenium sudah terinstall.")
     target_url = "https://Contoh.Servers.L/Admin/Login.php"          # ganti url login
-    username = "Leon"                                                # ganti usernamenya
+    username = "CyberKITS"                                           # ganti usernamenya
     password = "passwordAnda"                                        # ganti passwordnya
     username_field_selector = "#email"                               # sesuaikan id/class pada kolom username
     password_field_selector = "#password"                            # sesuaikan id/class pada kolom password
