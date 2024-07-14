@@ -1,7 +1,7 @@
 
 # Sebelum menggunakan sebaiknya melihat video tutorial di bagian Demo [LINK-YOUTUBE-VIDEO]
 
-import sys
+import subprocess as qq
 
 banner = f"""
     \033[32m  
@@ -49,14 +49,14 @@ except ImportError:
     if jawaban.lower() == "ya":
       try:
         # install Selenium Dengan PIP
-        sys.exec_command(["pip", "install", "selenium"])
+        qq.run(["pip", "install", "selenium"])
         print("Library Selenium berhasil diinstall :)")
         break
       except Exception as e:
-        print(f"Gagal menginstall Selenium: {e}")
+        print(f"Gagal menginstall Selenium:\33[31m {e}")
     elif jawaban.lower() == "tidak":
       print("Anda memilih untuk tidak menginstall Selenium.")
       break
     else:
-      print("Input tidak valid. Silakan masukkan 'ya' atau 'tidak'.")
+      print("\33[31mInput tidak valid. Silakan masukkan 'ya' atau 'tidak'.")
 
