@@ -1,5 +1,5 @@
 
-# Sebelum menggunakan sebaiknya melihat video tutorial di bagian Demo [LINK-YOUTUBE-VIDEO]
+# Sebelum menggunakan sebaiknya melihat video tutorial di bagian Demo https://youtu.be/8gIi9ixx-P8?si=tZMZbfYtHl2Zz_R1
 
 import subprocess as qq
 
