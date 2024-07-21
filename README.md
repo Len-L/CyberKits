@@ -69,7 +69,8 @@ Instal keperluan Defense-KITS di Server Ubuntu
 - Anti DDOS
 
 ## Misc
-- Auto Login
+- Auto Login <br>
+      - Bypass normal captcha
 
 ## Penggunaan Pentest-KITS
 ```javascript
