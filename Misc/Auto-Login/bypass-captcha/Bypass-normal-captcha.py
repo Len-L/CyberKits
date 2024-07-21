@@ -30,14 +30,14 @@ browser = webdriver.Chrome()
 browser.get('https://2captcha.com/demo/normal')                                 # url yang ada captchanya
 
 captcha_img = browser.find_element(By.CLASS_NAME, '_captchaImage_rrn3u_9')      # class dari gambar captcha nya
-captcha_img.screenshot('captchas/captcha.png')                                  # Lokasi local gambar captcha nya
+captcha_img.screenshot('captchas/captcha.jpg')                                  
 
 api_key = os.getenv('APIKEY_2CAPTCHA', 'API_Key-Anda')                          # API Key Anda
 
 solver = TwoCaptcha(api_key)
 
 try:
-    result = solver.normal('captchas/captcha.jpg')                              # Lokasi local gambar captcha nya 
+    result = solver.normal('captchas/captcha.jpg')                               
 
 except Exception as e:
     print(e)
