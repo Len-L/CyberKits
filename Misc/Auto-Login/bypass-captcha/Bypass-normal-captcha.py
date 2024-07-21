@@ -1,5 +1,6 @@
 # Sebelum menggunakan sebaiknya melihat video tutorial di bagian Demo [LINK-YOUTUBE-VIDEO]
 # pip install 2captcha-python
+# pip install selenium
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
