@@ -9,6 +9,22 @@ from twocaptcha import TwoCaptcha
 import time
 import os
 
+banner = f"""
+    \033[32m  
+
+        ╭━━━╮╱╱╱╭╮╱╱╱╱╱╱╭╮╭━┳━━┳━━━━┳━━━╮
+        ┃╭━╮┃╱╱╱┃┃╱╱╱╱╱╱┃┃┃╭┻┫┣┫╭╮╭╮┃╭━╮┃
+        ┃┃╱╰╋╮╱╭┫╰━┳━━┳━┫╰╯╯╱┃┃╰╯┃┃╰┫╰━━╮
+        ┃┃╱╭┫┃╱┃┃╭╮┃┃━┫╭┫╭╮┃╱┃┃╱╱┃┃╱╰━━╮┃
+        ┃╰━╯┃╰━╯┃╰╯┃┃━┫┃┃┃┃╰┳┫┣╮╱┃┃╱┃╰━╯┃
+        ╰━━━┻━╮╭┻━━┻━━┻╯╰╯╰━┻━━╯╱╰╯╱╰━━━╯
+        ╱╱╱╱╭━╯┃
+        ╱╱╱╱╰━━╯
+
+"""
+
+print(banner)
+print("\033[32m")
 browser = webdriver.Chrome()
 browser.get('https://2captcha.com/demo/normal')                                 # url yang ada captchanya
 
@@ -30,9 +46,9 @@ else:
     print(code)
 
     WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.ID, 'simple-captcha-field'))) # ID tempat masukin kata kata dari captcha
-    browser.find_element(By.ID, 'simple-captcha-field').send_keys(result)               # ID tempat masukin kata kata dari captcha
+    browser.find_element(By.ID, 'simple-captcha-field').send_keys(code)               # ID tempat masukin kata kata dari captcha
 
-    browser.find_element(By.CLASS_NAME, "_actionsItem_1f3oo_41").click()     # tombol check
+    browser.find_element(By.CLASS_NAME, "_actionsItem_1f3oo_41").click()     # class tombol check
 
 time.sleep(120)
 
