@@ -1,4 +1,4 @@
-# Sebelum menggunakan sebaiknya melihat video tutorial di bagian Demo [LINK-YOUTUBE-VIDEO]
+# Sebelum menggunakan sebaiknya melihat video tutorial di bagian Demo https://youtu.be/YqLZHOD9DKA?si=D21MfKgA5ap_rZjD
 # pip install 2captcha-python
 # pip install selenium
 
