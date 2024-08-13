@@ -21,6 +21,7 @@ Instal keperluan Pentest-KITS di debian linux
   #> apt install nmap 
   #> apt install figlet
   #> apt install jq
+  #> apt install smbclient
   #> apt install mat2 #Linux Only
   #> git clone https://github.com/Len-L/CyberKits.git
   #> cd CyberKits/Pentest-KITS 
@@ -51,7 +52,7 @@ Instal keperluan Defense-KITS di Server Ubuntu
 ```    
 
 ## Pentest-KITS Features 
-- Vulnerability Scanner + Auto Exploit Vulnerability 
+- Vulnerability Scanner (Auto Exploit Vulnerability, SMB Enumeration)
 - Exploit SSRF Otomatis [Support SSL]
 - Bypass 403 (Bypass Forbidden Page)
 - Pencari Parameter (Mining URLS) 
