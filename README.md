@@ -27,7 +27,6 @@ Install Pentest-KITS requirements on debian linux
   #> cd CyberKits/Pentest-KITS 
   #> pip install -r requirements.txt
 ```
-Venv PentestKITS: https://tinyurl.com/pentestKITS-venv
 ## Installation Defense-KITS
 Install Defense-KITS requirements on Ubuntu Server
 ```javascript
