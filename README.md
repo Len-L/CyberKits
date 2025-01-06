@@ -1,5 +1,5 @@
 # CyberKits
-Perlengkapan Cyber Dalam Melakukan Pentest Dan Pertahanan Server Dari Aktivitas Penyerangan Peretas<br>
+Cyber ​​​​Tools for Conducting Penetration Testing and Server Defense from Hacker Attack Activities<br>
 
 ```javascript
 
@@ -16,7 +16,7 @@ Perlengkapan Cyber Dalam Melakukan Pentest Dan Pertahanan Server Dari Aktivitas 
 <br>
 
 ## Installation Pentest-KITS 
-Instal keperluan Pentest-KITS di debian linux
+Install Pentest-KITS requirements on debian linux
 ```bash
   #> apt install nmap 
   #> apt install figlet
@@ -26,14 +26,15 @@ Instal keperluan Pentest-KITS di debian linux
   #> git clone https://github.com/Len-L/CyberKits.git
   #> cd CyberKits/Pentest-KITS 
   #> pip install -r requirements.txt
-```    
+```
+Venv PentestKITS: https://tinyurl.com/pentestKITS-venv
 ## Installation Defense-KITS
-Instal keperluan Defense-KITS di Server Ubuntu
+Install Defense-KITS requirements on Ubuntu Server
 ```javascript
   #> cd CyberKits/Defense-KITS
   #> python3 setup.py
   
-  #Output sebagai berikut======
+  #Output======
 
         ╭━━━╮╱╱╱╭━╮╱╱╱╱╱╱╱╱╱╱╱╱╭╮╭━┳━━┳━━━━┳━━━╮
         ╰╮╭╮┃╱╱╱┃╭╯╱╱╱╱╱╱╱╱╱╱╱╱┃┃┃╭┻┫┣┫╭╮╭╮┃╭━╮┃
@@ -53,13 +54,13 @@ Instal keperluan Defense-KITS di Server Ubuntu
 
 ## Pentest-KITS Features 
 - Vulnerability Scanner (Auto Exploit Vulnerability, SMB Enumeration)
-- Exploit SSRF Otomatis [Support SSL]
+- automatic Exploit SSRF [Support SSL]
 - Bypass 403 (Bypass Forbidden Page)
-- Pencari Parameter (Mining URLS) 
+- Parameter Finder (Mining URLS) 
 - Temporary Email (anonim-kit) 
 - MetaData Cleaner (anonim-kit) [Linux Only]
 - Subdomain Scanner
-- Pencari Exploits Online
+- Online Exploit Finder
 
 ## Defense-KITS Features 
 - Honeypot 
@@ -67,19 +68,19 @@ Instal keperluan Defense-KITS di Server Ubuntu
 - WAF Level Aplikasi (ModSecurity)
 - Anti Virus
 - Hardening Server Apache2
-- Auto Ban IP (jika Percobaan terus menerus gagal)
+- Auto Ban IP (if the experiment fails)
 - Anti DDOS
 
 ## Misc
 - Auto Login <br>
       - Bypass normal captcha
 
-## Penggunaan Pentest-KITS
+## Usage Pentest-KITS
 ```javascript
 #> cd CyberKits/Pentest-KITS
 #> python3 main.py
 
-#Output akan seperti ini======
+#Output======
 
         ╭━━━╮╱╱╱╱╱╭╮╱╱╱╱╱╱╭╮╱╭╮╭━┳━━┳━━━━┳━━━╮
         ┃╭━╮┃╱╱╱╱╭╯╰╮╱╱╱╱╭╯╰╮┃┃┃╭┻┫┣┫╭╮╭╮┃╭━╮┃
@@ -90,11 +91,12 @@ Instal keperluan Defense-KITS di Server Ubuntu
 1. Scanning
 2. Exploit SSRF
 3. Bypass 403
-4. Pencari Parameter
+4. Parameter Finder [Mining URLS]
 5. Temporary Email [anonim-kit]
-6. MetaData Cleaner [anonim-kit]
+6. MetaData Cleaner [anonim-kit] 
 7. Subdomain Scanner
-8. Pencari Exploits Online
+8. Online Exploit Finder
+9. Files Sharing
 99. Exit
 [Pentest-KITS]_Options->
 ```
@@ -104,7 +106,7 @@ Instal keperluan Defense-KITS di Server Ubuntu
 #> cd CyberKits/Defense-KITS
 #> python3 admin_control.py
 
-#Output akan seperti ini======
+#Output======
 
         ╭━━━╮╱╱╱╭━╮╱╱╱╱╱╱╱╱╱╱╱╱╭╮╭━┳━━┳━━━━┳━━━╮
         ╰╮╭╮┃╱╱╱┃╭╯╱╱╱╱╱╱╱╱╱╱╱╱┃┃┃╭┻┫┣┫╭╮╭╮┃╭━╮┃
@@ -127,7 +129,7 @@ Instal keperluan Defense-KITS di Server Ubuntu
 
 ## Demo
 
-Seluruh Video Demo CyberKITS:<br>
+All CyberKITS Demo Videos:<br>
 https://www.youtube.com/watch?v=iIwvKSeBbGg&list=PLYk3ddW0_4QOXWIYlb8dn1a4JqK6o3Xoj&pp=iAQB
 
 
