@@ -60,6 +60,7 @@ Install Defense-KITS requirements on Ubuntu Server
 - MetaData Cleaner (anonim-kit) [Linux Only]
 - Subdomain Scanner
 - Online Exploit Finder
+- Files Sharing
 
 ## Defense-KITS Features 
 - Honeypot 
