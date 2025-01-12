@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "CyberKITS"
+version = "1.5"
+description = "Cyber Tools for Conducting Penetration Testing and Server Defense from Hacker Attack Activities"
+authors = [
+    { name = "LenL Quantum", url = "https://youtube.com/@LenL_" }
+]
+dependencies = [
+    "Flask==1.0.2",
+    "requests==2.21.0",
+    "MailTm==0.0.81",
+    "argparse==1.4.0",
+    "impacket>=0.9.21",
+    "ldap3==2.9.1",
+    "PyYAML>=5.1",
+    "colorama==0.4.4",
+    "honeypots==0.66"
+]
+
