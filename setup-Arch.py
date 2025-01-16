@@ -1,4 +1,5 @@
 import os 
+import subprocess
 
 banner = f"""
     \033[32m
@@ -34,6 +35,12 @@ print("Install Honeypots")
 os.system("pip3 install honeypots")
 print("Install Apache2")
 os.system("pacman -S --noconfirm apache")
+try:
+  subprocess.run(["yay", "-V"], capture_output=True, text=True, check=True)
+  print("yay is installed")
+except subprocess.CalledProcessError:
+  subprocess.run(["pacman", "-S", "yay"], capture_output=True, text=True, check=True)
+os.system("yay -S libmodsecurity2") 
 print("Setting Anti DDOS")
 os.system("iptables -t mangle -A PREROUTING -m conntrack --ctstate INVALID -j DROP") #block invalid packet
 os.system("iptables -t mangle -A PREROUTING -p tcp ! --s --noconfirmyn -m conntrack --ctstate NEW -j DROP") #Block New Packet Yang Not SYN
@@ -46,3 +53,4 @@ os.system("iptables -t mangle -A PREROUTING -p tcp --tcp-flags FIN,ACK FIN -j DR
 os.system("iptables -t mangle -A PREROUTING -p tcp --tcp-flags ACK,URG URG -j DROP")
 os.system("iptables -t mangle -A PREROUTING -p tcp --tcp-flags ACK,PSH PSH -j DROP")
 os.system("iptables -t mangle -A PREROUTING -p tcp --tcp-flags ALL NONE -j DROP")
+
