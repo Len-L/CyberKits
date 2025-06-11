@@ -52,7 +52,7 @@ Install Defense-KITS requirements on Ubuntu Server
 ```    
 
 ## Pentest-KITS Features 
-- Vulnerability Scanner (Auto Exploit Vulnerability, SMB Enumeration)
+- Vulnerability Scanner (Auto Exploit Detection, SMB Enumeration)
 - automatic Exploit SSRF [Support SSL]
 - Bypass 403 (Bypass Forbidden Page)
 - Parameter Finder (Mining URLS) 
