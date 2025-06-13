@@ -30,8 +30,8 @@ Cyber ​​​​Tools for Conducting Penetration Testing and Server Defense fr
 #### Install Pentest-KITS With Docker
 ```bash
   #> cd CyberKits/Pentest-KITS 
-  #> docker build -t CyberKits-PentestKITS .
-  #> docker run --rm -it --cap-add=NET_RAW CyberKits-PentestKITS         # Run CyberKits(Pentest-KITS)
+  #> docker build -t cyberkits-pentestkits .
+  #> docker run --rm -it --cap-add=NET_RAW cyberkits-pentestkits         # Run CyberKits(Pentest-KITS)
 ```
 
 
